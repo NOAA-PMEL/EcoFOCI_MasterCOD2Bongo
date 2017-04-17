@@ -23,8 +23,15 @@ __author__   = 'Shaun Bell'
 __email__    = 'shaun.bell@noaa.gov'
 __created__  = datetime.datetime(2014, 8, 22)
 __modified__ = datetime.datetime(2014, 8, 22)
-__version__  = "0.1.0"
+__version__  = "0.1.1"
 __status__   = "Development"
+
+
+""" -------------------ChangeLog
+V0.1.1 - moved watermass code to .pyini file
+
+
+------------------------------"""
 
 """-------------------------------------------------------------------------"""
 
@@ -142,7 +149,7 @@ epic_header = ('@ Consecutive Cast Number: {0}\n').format(BONGO_ID) + \
               ('@ Station ID: {0}\n').format(field_data['STATION_NAME']) + \
               ('@ Haul Number: {0}\n').format(field_data['HAUL_NAME']) + \
               ('@ Cruise: {0}\n').format(field_data['CRUISE']) + \
-              ('@ Water Mass Code: B\n') + \
+              ('@ Water Mass Code: {0}\n').format(MasterCOD_config['WaterMassCode']) + \
               ('@ EPIC Data Type: CTD\n') + \
               ('@ Instrument Type: fastcat\n') + \
               ('@ EPIC Coordinate System: GEOGRAPHICAL\n')
@@ -153,7 +160,6 @@ db.close()
 print ("The following information was added to {0}:\n{1}").format(BONGO_file,epic_header)
     
 ### Edit BONGO .cnv file to add EPIC parameters
-cnv_file = open(path2bongo_data + '\\' + BONGO_file )
 cnv_edited = open(path2bongo_data + '\\' + BONGO_file + '.tmp', 'wb')
 
 with open(path2bongo_data + '\\' + BONGO_file) as cnv_file:

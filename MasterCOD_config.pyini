@@ -1,5 +1,6 @@
 {
 	"MasterCOD_filename": "DY14-08_DY1408L1_masterCOD_ecoDAAT.db3",
     "path2COD_db": "C:\\Users\\pmelctd\\Desktop\\MasterCOD_test\\DY14-08_MasterCOD\\",
-	"path2bongo_data": "C:\\data\\fastcat\\current\\"
+	"path2bongo_data": "C:\\data\\fastcat\\current\\",
+	"WaterMassCode": "B"
 }
