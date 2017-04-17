@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Loop_Edit >
+  <Version value="5.37b" />
+  <ServerName value="Loop Edit" />
+  <InputDir value="C:\data\seacat\current" />
+  <InputFileArray size="1" GrowBy="-1" >
+    <ArrayItem index="0" value="001H1.cnv" />
+  </InputFileArray>
+  <OutputDir value="C:\data\seacat\current" />
+  <NameAppend value="" />
+  <OutputFile value="" />
+  <LastProcessed value="0" />
+  <MinVelocityType value="1" high="1" low="0" initialValue="0" />
+  <MinCTD_Velocity value="0.100000" />
+  <TimeWindowSize value="120.000000" />
+  <PercentMeanSpeed value="20.000000" />
+  <ExcludeMarkedBad value="1" />
+  <RemoveSurfaceSoak value="0" />
+  <UseDeckPressure value="1" />
+  <SurfaceSoakDepth value="10.000000" />
+  <SurfaceSoakDepthMin value="5.000000" />
+  <SurfaceSoakDepthMax value="20.000000" />
+</Loop_Edit>

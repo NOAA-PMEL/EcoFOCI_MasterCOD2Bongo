@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translate >
+  <Version value="5.37m" />
+  <ServerName value="Translate" />
+  <InputDir value="C:\data\seacat\current" />
+  <InputFileArray size="1" GrowBy="-1" >
+    <ArrayItem index="0" value="bon001.cnv" />
+  </InputFileArray>
+  <OutputDir value="C:\data\seacat\current" />
+  <NameAppend value="" />
+  <OutputFile value="" />
+  <LastProcessed value="0" />
+  <Translation value="0" high="2" low="0" initialValue="0" />
+</Translate>

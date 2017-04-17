@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Split >
+  <Version value="5.37m" />
+  <ServerName value="Split" />
+  <InputDir value="C:\data\seacat\current" />
+  <InputFileArray size="1" GrowBy="-1" >
+    <ArrayItem index="0" value="bon001.cnv" />
+  </InputFileArray>
+  <OutputDir value="C:\data\seacat\current" />
+  <NameAppend value="" />
+  <OutputFile value="" />
+  <LastProcessed value="0" />
+  <OutputFiles value="0" high="1" low="0" initialValue="0" />
+  <ExcludeMarkedBad value="1" />
+</Split>

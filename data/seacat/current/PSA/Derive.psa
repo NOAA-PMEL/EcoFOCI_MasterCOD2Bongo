@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Derive >
+  <Version value="5.37m" />
+  <ServerName value="Derive" />
+  <InstrumentPath value="C:\data\seacat\current\bon001.CON" />
+  <InstrumentMatch value="0" />
+  <InputDir value="C:\data\seacat\current" />
+  <InputFileArray size="1" GrowBy="-1" >
+    <ArrayItem index="0" value="bon001.cnv" />
+  </InputFileArray>
+  <OutputDir value="C:\data\seacat\current" />
+  <NameAppend value="" />
+  <OutputFile value="" />
+  <LastProcessed value="0" />
+  <CalcArray Size="2" >
+    <CalcArrayItem index="0" CalcID="70" >
+      <Calc UnitID="49" Ordinal="0" >
+        <FullName value="Salinity [PSU]" />
+      </Calc>
+    </CalcArrayItem>
+    <CalcArrayItem index="1" CalcID="15" >
+      <Calc UnitID="54" Ordinal="0" >
+        <FullName value="Density [sigma-t, Kg/m^3 ]" />
+      </Calc>
+    </CalcArrayItem>
+  </CalcArray>
+</Derive>

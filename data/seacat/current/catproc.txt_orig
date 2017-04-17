@@ -1,0 +1,20 @@
+@ catproc.txt, main seacat processing template to use with sbebatch
+@ all lines beginning with a "@" are comments
+
+datcnv /pc:\data\seacat\current\psa\datcnv.psa /ic:\data\seacat\current\%1.hex /cc:\data\seacat\current\%1.con /oc:\data\seacat\current
+
+filter /pc:\data\seacat\current\psa\filter.psa /ic:\data\seacat\current\%1.cnv /oc:\data\seacat\current
+
+alignctd /pc:\data\seacat\current\psa\alignctd.psa /ic:\data\seacat\current\%1.cnv /oc:\data\seacat\current
+
+loopedit /pc:\data\seacat\current\psa\loopedit.psa /ic:\data\seacat\current\%1.cnv /oc:\data\seacat\current
+
+binavg /pc:\data\seacat\current\psa\binavg.psa /ic:\data\seacat\current\%1.cnv /oc:\data\seacat\current
+
+derive /pc:\data\seacat\current\psa\derive.psa /ic:\data\seacat\current\%1.cnv /cc:\data\seacat\current\%1.con /oc:\data\seacat\current
+
+wildedit /pc:\data\seacat\current\psa\wildedit.psa /ic:\data\seacat\current\%1.cnv /oc:\data\seacat\current
+
+trans /pc:\data\seacat\current\psa\trans.psa /ic:\data\seacat\current\%1.cnv /oc:\data\seacat\current
+
+split /pc:\data\seacat\current\psa\Split.psa /ic:\data\seacat\current\%1.cnv

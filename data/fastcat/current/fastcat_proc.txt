@@ -1,0 +1,19 @@
+@ fastcat_proc.txt - sbebatch script for processing fastcat data files as profiles
+
+datcnv /pc:\data\fastcat\current\psa\datcnv_fastcat.psa /ic:\data\fastcat\current\%1.hex /cc:\data\fastcat\current\%1.xmlcon /oc:\data\fastcat\current
+
+filter /pc:\data\fastcat\current\psa\filter_fastcat.psa /ic:\data\fastcat\current\%1.cnv /oc:\data\fastcat\current
+
+alignctd /pc:\data\fastcat\current\psa\alignCTD_fastcat.psa /ic:\data\fastcat\current\%1.cnv /oc:\data\fastcat\current
+
+celltm /pc:\data\fastcat\current\psa\celltm_fastcat.psa /ic:\data\fastcat\current\%1.cnv /oc:\data\fastcat\current
+
+loopedit /pc:\data\fastcat\current\psa\loopedit_fastcat.psa /ic:\data\fastcat\current\%1.cnv /oc:\data\fastcat\current
+
+derive /pc:\data\fastcat\current\psa\derive_fastcat.psa /ic:\data\fastcat\current\%1.cnv /cc:\data\fastcat\current\%1.xmlcon /oc:\data\fastcat\current
+
+binavg /pc:\data\fastcat\current\psa\binavg_fastcat.psa /ic:\data\fastcat\current\%1.cnv /oc:\data\fastcat\current
+
+trans /pc:\data\fastcat\current\psa\trans_fastcat.psa /ic:\data\fastcat\current\%1.cnv /oc:\data\fastcat\current
+
+split /pc:\data\fastcat\current\psa\Split_fastcat.psa /ic:\data\fastcat\current\%1.cnv

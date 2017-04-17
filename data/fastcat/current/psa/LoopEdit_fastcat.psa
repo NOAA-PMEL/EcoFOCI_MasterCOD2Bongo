@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Loop_Edit >
+  <Version value="7.21k" />
+  <ServerName value="Loop Edit" />
+  <InputDir value="c:\data\fastcat\current" />
+  <InputFileArray size="1" GrowBy="-1" >
+    <ArrayItem index="0" value="wt01.cnv" />
+  </InputFileArray>
+  <OutputDir value="c:\data\fastcat\current" />
+  <NameAppend value="" />
+  <OutputFile value="" />
+  <LastProcessed value="0" />
+  <MinVelocityType value="0" high="1" low="0" initialValue="0" />
+  <MinCTD_Velocity value="0.000000" />
+  <TimeWindowSize value="120.000000" />
+  <PercentMeanSpeed value="20.000000" />
+  <ExcludeMarkedBad value="1" />
+  <RemoveSurfaceSoak value="0" />
+  <UseDeckPressure value="0" />
+  <SurfaceSoakDepth value="10.000000" />
+  <SurfaceSoakDepthMin value="0.000000" />
+  <SurfaceSoakDepthMax value="20.000000" />
+</Loop_Edit>

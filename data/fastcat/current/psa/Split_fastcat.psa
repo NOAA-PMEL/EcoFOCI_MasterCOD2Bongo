@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Split >
+  <Version value="7.21k" />
+  <ServerName value="Split" />
+  <InputDir value="c:\data\fastcat\current" />
+  <InputFileArray size="1" GrowBy="-1" >
+    <ArrayItem index="0" value="wt01.cnv" />
+  </InputFileArray>
+  <OutputDir value="c:\data\fastcat\current" />
+  <NameAppend value="" />
+  <OutputFile value="" />
+  <LastProcessed value="0" />
+  <OutputFiles value="0" high="1" low="0" initialValue="0" />
+  <ExcludeMarkedBad value="0" />
+</Split>

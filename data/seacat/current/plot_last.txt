@@ -1,0 +1,5 @@
+@ plot_last.txt sbebatch script
+@ any line beginning with @ is a comment and has no effect
+
+seaplot /pc:\data\seacat\current\psa\seaplot.psa /ic:\data\seacat\current\%1.cnv /oc:\data\seacat\current /d
+
