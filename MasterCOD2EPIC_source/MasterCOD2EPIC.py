@@ -3,15 +3,33 @@
 """
  MasterCOD2EPIC.py
  
-Retrieve header information from MasterCOD database at sea to append to seabird .cnv
-files for EPIC routines.  Replaces EPIC addheader.c routine
 
-Built using Python XY 
+ Purpose:
+ --------
+
+ Retrieve header information from MasterCOD database at sea to append to seabird .cnv
+  files for EPIC routines.  Replaces EPIC addheader.c routine
+ 
+ History:
+ --------
+
+ Original routine written in 2014 for AFSC FOCI Program
+
+ 2016-09-29 - S. Bell - add yaml ability (cleaner to read than json), make BONGO_ID from filename
+ uppercase in all instances.
+
+
+ TODO:
+ -----
+ CLAMS compatibility
+ case insensitive
+ user error options 
+
 """
 
 
 #System Stack
-import json
+import json, yaml
 import sys
 import os
 import datetime
@@ -23,15 +41,8 @@ __author__   = 'Shaun Bell'
 __email__    = 'shaun.bell@noaa.gov'
 __created__  = datetime.datetime(2014, 8, 22)
 __modified__ = datetime.datetime(2014, 8, 22)
-__version__  = "0.1.1"
+__version__  = "1.0.0"
 __status__   = "Development"
-
-
-""" -------------------ChangeLog
-V0.1.1 - moved watermass code to .pyini file
-
-
-------------------------------"""
 
 """-------------------------------------------------------------------------"""
 
@@ -50,7 +61,20 @@ def get_config(infile):
         sys.exit()
         
     return d
+  
+def get_config_yaml(infile):
+    """ Input - full path to config file
     
+        Output - dictionary of file config parameters
+    """
+    infile = str(infile)
+    
+    try:
+        d = yaml.load(open(infile))
+    except:
+        raise RuntimeError('{0} not found'.format(infile))
+        
+    return d    
         
 def dict_factory(cursor, row):
     d = {}
@@ -69,7 +93,7 @@ BONGO_file = args.cnv_file
 
 
 #BONGO_file = 'BON002.cnv'
-BONGO_ID = BONGO_file.split('.')[0]
+BONGO_ID = (BONGO_file.split('.')[0]).upper()
 
 #get information from local config file - BONGO_filea json formatted file
 #MasterCOD_config['path2CODdb']
@@ -149,7 +173,7 @@ epic_header = ('@ Consecutive Cast Number: {0}\n').format(BONGO_ID) + \
               ('@ Station ID: {0}\n').format(field_data['STATION_NAME']) + \
               ('@ Haul Number: {0}\n').format(field_data['HAUL_NAME']) + \
               ('@ Cruise: {0}\n').format(field_data['CRUISE']) + \
-              ('@ Water Mass Code: {0}\n').format(MasterCOD_config['WaterMassCode']) + \
+              ('@ Water Mass Code: B\n') + \
               ('@ EPIC Data Type: CTD\n') + \
               ('@ Instrument Type: fastcat\n') + \
               ('@ EPIC Coordinate System: GEOGRAPHICAL\n')
@@ -160,6 +184,7 @@ db.close()
 print ("The following information was added to {0}:\n{1}").format(BONGO_file,epic_header)
     
 ### Edit BONGO .cnv file to add EPIC parameters
+cnv_file = open(path2bongo_data + '\\' + BONGO_file )
 cnv_edited = open(path2bongo_data + '\\' + BONGO_file + '.tmp', 'wb')
 
 with open(path2bongo_data + '\\' + BONGO_file) as cnv_file:
